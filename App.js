@@ -1,13 +1,22 @@
 import { StatusBar } from 'expo-status-bar';
-import { ActivityIndicator, StyleSheet, Text, View } from 'react-native';
+import { ActivityIndicator, StyleSheet, Text, View,ScrollView  } from 'react-native';
 import { useFonts } from 'expo-font';
+import Sprite1 from './components/sprite1'
+import Sprite2 from './components/sprite2'
+import Sprite3 from './components/sprite3'
+import Sprite4 from './components/sprite4'
+import Sprite5 from './components/sprite5'
+import Home from './components/home'
 
 export default function App() {
   
   const [loaded] = useFonts({
       'bold': require('./assets/Fonts/Rajdhani-Bold.ttf'),
       'medium':require('./assets/Fonts/Rajdhani-Medium.ttf'),
-      'semiBold':require('./assets/Fonts/Rajdhani-SemiBold.ttf')
+      'semiBold':require('./assets/Fonts/Rajdhani-SemiBold.ttf'),
+      'LatoBold':require('./assets/Fonts/Lato-Bold.ttf'),
+      'LatoMedium':require('./assets/Fonts/Lato-Medium.ttf')
+
   });
 
   if (!loaded){
@@ -19,20 +28,17 @@ export default function App() {
   } 
 
   return (
-    <View style={styles.container}>
+    <ScrollView horizontal={true}> 
 
-      <Text>
-        <Text style={styles.bell}>Bell</Text>
-        <Text style={styles.dr}>DR </Text>
-        <Text style={styles.bodyText}>React Native App</Text>
-      </Text>
-
-      <Text style={styles.title}>Titulo del Articulo</Text>
-      <Text style={styles.subtitle}>Sub-Titulo del Articulo</Text>
-      <Text style={styles.content}>Delightful Onboarding for your React-Native app. Let your users get familiar with your app by giving a pleasurable introduction. The Onboarding component is easy to set up and but still customizable.</Text>
-
-      <StatusBar style="auto" />
-    </View>
+        <Sprite1 />
+        <Sprite2 />
+        <Sprite3 />
+        <Sprite4 />
+        <Sprite5 />
+        <Home />
+        <StatusBar style="auto" />
+     </ScrollView >
+    
   );
 }
 
