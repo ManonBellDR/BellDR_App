@@ -60,7 +60,7 @@ const styles = StyleSheet.create({
   },
   Txt586: {
     fontSize: 28,
-    fontFamily: "LatoBold, sans-serif",
+    fontFamily: "LatoBold",
     fontWeight: "700",
     color: "rgba(17,18,109,1)",
     textAlign: "center",
@@ -77,7 +77,7 @@ const styles = StyleSheet.create({
   },
   Txt1210: {
     fontSize: 15,
-    fontFamily: "LatoMedium, sans-serif",
+    fontFamily: "LatoMedium",
     fontWeight: "500",
     color: "rgba(17,18,109,1)",
     textAlign: "center",
@@ -93,7 +93,7 @@ const styles = StyleSheet.create({
   },
   Txt658: {
     fontSize: 15,
-    fontFamily: "LatoBold, sans-serif",
+    fontFamily: "LatoBold",
     fontWeight: "700",
     color: "rgba(17,18,109,1)",
     textAlign: "center",
@@ -137,7 +137,7 @@ const styles = StyleSheet.create({
   },
   Txt632: {
     fontSize: 15,
-    fontFamily: "LatoBold, sans-serif",
+    fontFamily: "LatoBold",
     fontWeight: "700",
     color: "rgba(17,18,109,1)",
     textAlign: "center",

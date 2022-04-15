@@ -42,7 +42,7 @@ const styles = StyleSheet.create({
   },
   Txt321: {
     fontSize: 28,
-    fontFamily: "LatoBold, sans-serif",
+    fontFamily: "LatoBold",
     fontWeight: "700",
     color: "rgba(17,18,109,1)",
     textAlign: "center",
