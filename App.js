@@ -1,15 +1,22 @@
+import React, { useState } from 'react'
 import { StatusBar } from 'expo-status-bar';
-import { ActivityIndicator, StyleSheet, Text, View,ScrollView  } from 'react-native';
+import { ActivityIndicator, StyleSheet, Text, View,SafeAreaView } from 'react-native';
 import { useFonts } from 'expo-font';
-import Sprite1 from './components/sprite1'
-import Sprite2 from './components/sprite2'
-import Sprite3 from './components/sprite3'
-import Sprite4 from './components/sprite4'
-import Sprite5 from './components/sprite5'
-import Home from './components/home'
+import colors from './assets/colors'
+import Onboarding from './components/onboarding';
+import GetStarted from './components/getstarted'
+
 
 export default function App() {
+  const [showRealApp, setShowRealApp] = useState(true);
   
+  const handelOnbardFinished = () => {
+    setShowRealApp(false);
+  };
+
+  const handelOnbardBack = () => {
+    setShowRealApp(true);
+  };
   const [loaded] = useFonts({
       'bold': require('./assets/Fonts/Rajdhani-Bold.ttf'),
       'medium':require('./assets/Fonts/Rajdhani-Medium.ttf'),
@@ -28,26 +35,33 @@ export default function App() {
   } 
 
   return (
-    <ScrollView horizontal={true}> 
-
-        <Sprite1 />
-        <Sprite2 />
-        <Sprite3 />
-        <Sprite4 />
-        <Sprite5 />
-        <Home />
+  <>
+      {showRealApp ? (
+        <View style={styles.container}>
+          <Onboarding handelDone={handelOnbardFinished}/>
+          <StatusBar style="auto" />
+        </View>
+      ) : (
+        <SafeAreaView style={styles.container}>
+        <GetStarted handelBack={handelOnbardBack}/>
         <StatusBar style="auto" />
-     </ScrollView >
-    
+         
+        </SafeAreaView>
+      )}
+      
+    </>
+
+   
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#ECECEC',
-    alignItems: 'center',
-    justifyContent: 'center',
+          backgroundColor: colors.lightGray,
+          // alignItems: 'center',
+          // justifyContent: 'space-around',
+          // paddingBottom: 100,
     
   },
   bell:{
